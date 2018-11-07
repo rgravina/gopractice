@@ -1,11 +1,11 @@
 default: format
-	go run main.go
+	@go run main.go
 
 test: format
-	go test
+	@go test
 
 format:
-	gofmt -w main.go
+	@gofmt -w main.go
 
 install:
 	go install

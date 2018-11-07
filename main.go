@@ -1,5 +1,14 @@
 package main
 
-func main() {
+import (
+	"fmt"
+	"os"
+)
 
+func main() {
+	if len(os.Args) > 1 {
+		fmt.Println(os.Args[1])
+	} else {
+		fmt.Println("No arguments were passed in")
+	}
 }
