@@ -1,0 +1,3 @@
+# Go Practice
+
+Practicing Go.
