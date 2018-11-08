@@ -1,33 +1,22 @@
 package main
 
-import (
-	"errors"
-	"fmt"
-	"os"
-	"time"
-)
+import "fmt"
 
 func main() {
-	hourOfDay := time.Now().Hour()
-	greeting, err := getGreeting(hourOfDay)
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+	for i := 0; i < 10; i++ {
+		printIteration(i)
 	}
-	fmt.Println(greeting)
+
+	i := 0
+	for {
+		if i >= 10 {
+			break
+		}
+		printIteration(i)
+		i++
+	}
 }
 
-func getGreeting(hour int) (string, error) {
-	var message string
-	if hour < 7 {
-		err := errors.New("It is too early")
-		return message, err
-	} else if hour < 12 {
-		message = "Good Morning"
-	} else if hour < 18 {
-		message = "Good Afternoon"
-	} else {
-		message = "Good Evening"
-	}
-	return message, nil
+func printIteration(i int) (int, error) {
+	return fmt.Println("Loop iteration: ", i+1)
 }

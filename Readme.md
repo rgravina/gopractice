@@ -1,3 +1,3 @@
 # Go Practice
 
-Practicing Go.
+Practicing Go, mostly by going through exercises from tutorials etc.
