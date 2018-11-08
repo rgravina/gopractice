@@ -2,14 +2,21 @@ package main
 
 import (
 	"fmt"
-	"os"
+	"time"
 )
 
 func main() {
-	args := os.Args
-	if len(args) > 1 {
-		fmt.Println(args[1])
+	hourOfDay := time.Now().Hour()
+	greeting := getGreeting(hourOfDay)
+	fmt.Println(greeting)
+}
+
+func getGreeting(hour int) string {
+	if hour < 12 {
+		return "Good Morning"
+	} else if hour < 18 {
+		return "Good Afternoon"
 	} else {
-		fmt.Println("No arguments were passed in")
+		return "Good Evening"
 	}
 }
