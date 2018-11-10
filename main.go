@@ -1,22 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
-	for i := 0; i < 10; i++ {
-		printIteration(i)
-	}
-
-	i := 0
-	for {
-		if i >= 10 {
-			break
-		}
-		printIteration(i)
-		i++
-	}
+type ProgrammingLanguage struct {
+	name string
+	year int
 }
 
-func printIteration(i int) (int, error) {
-	return fmt.Println("Loop iteration: ", i+1)
+func main() {
+	java := ProgrammingLanguage{name: "Java", year: 1996}
+	golang := ProgrammingLanguage{name: "Golang", year: 2012}
+	c := ProgrammingLanguage{name: "C", year: 1972}
+	fmt.Println(java, golang, c)
 }
