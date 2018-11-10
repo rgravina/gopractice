@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 type ProgrammingLanguage struct {
@@ -9,9 +10,15 @@ type ProgrammingLanguage struct {
 	year int
 }
 
+func (pl ProgrammingLanguage) description() string {
+	return pl.name + "\t- Released in " + strconv.Itoa(pl.year) + "."
+}
+
 func main() {
+	c := ProgrammingLanguage{name: "C", year: 1972}
 	java := ProgrammingLanguage{name: "Java", year: 1996}
 	golang := ProgrammingLanguage{name: "Golang", year: 2012}
-	c := ProgrammingLanguage{name: "C", year: 1972}
-	fmt.Println(java, golang, c)
+	fmt.Println(c.description())
+	fmt.Println(java.description())
+	fmt.Println(golang.description())
 }
