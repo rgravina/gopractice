@@ -18,7 +18,10 @@ func main() {
 	c := ProgrammingLanguage{name: "C", year: 1972}
 	java := ProgrammingLanguage{name: "Java", year: 1996}
 	golang := ProgrammingLanguage{name: "Golang", year: 2012}
-	fmt.Println(c.description())
+
+	oldestLanguage := &c
+	fmt.Println(oldestLanguage.description())
 	fmt.Println(java.description())
 	fmt.Println(golang.description())
+
 }
